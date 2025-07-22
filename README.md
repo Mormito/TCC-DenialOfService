@@ -1,4 +1,4 @@
-# Sistema de negação de serviço - Feito por: Mormito
+# Sistema de negação de serviço
 
 Esse projeto está sendo desenvolvido como trabalho de conclusão de curso, da faculdade de análise e desenvolvimento de sistemas.
 

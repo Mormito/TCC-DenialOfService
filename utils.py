@@ -1,5 +1,6 @@
 import os
 import platform
+import time
 
 def clear():
     if platform.system() == "Windows":
@@ -7,6 +8,15 @@ def clear():
     else:
         os.system('clear')
 
+def warning():
+    clear()
+    sign()
+    print("> This code was built only for educacional purposes")
+    time.sleep(1)
+    print("> I am not responsible for any ilegal or non ethical uses ")
+    print()
+    time.sleep(2)
+    clear()
 
 def sign():
     BLUE = "\033[34m"
@@ -20,3 +30,18 @@ def sign():
 
     '''
     print(f"{BLUE}{mogh}{RESET}")
+
+
+def results(target, port, number):
+    GREEN = "\033[32m"
+    RESET = "\033[0m"
+    text = f'''
+{GREEN}ATTACK SUCCESSFULLY EXECUTED{RESET}
++---------------------------------+
+Target: {target}
+Port: {port}
+Number of Threads: {number}
++---------------------------------+
+
+'''
+    print(text)

