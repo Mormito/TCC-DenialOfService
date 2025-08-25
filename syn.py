@@ -24,4 +24,3 @@ def synflood(destiny, destiny_port, num_of_packets, num_of_workers):
 
 
 
-
