@@ -29,17 +29,17 @@ Choose wisely: ''').strip())
         synflood(target, port, num, numwor)
 
         clear()
-        results(target, port, num)
+        results(target, port, num, "SYN")
     elif(opcao == 2):
         clear()
         target = input("Target (IP or url) >> ").strip()
         port = int(input("Target port >> "))
         num = int(input("Number of threads >> "))
         numwor = int(input("Number of workens (default 200) >> "))
-        udpflood(target, port, num)
+        udpflood(target, port, num, numwor)
 
         clear()
-        results(target, port, num)
+        results(target, port, num, "UDP")
 
 control()
     

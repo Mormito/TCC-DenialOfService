@@ -32,7 +32,7 @@ def sign():
     print(f"{BLUE}{mogh}{RESET}")
 
 
-def results(target, port, number):
+def results(target, port, number, type):
     GREEN = "\033[32m"
     RESET = "\033[0m"
     text = f'''
@@ -41,6 +41,7 @@ def results(target, port, number):
 Target: {target}
 Port: {port}
 Number of Threads: {number}
+Attack type: {type}
 +---------------------------------+
 
 '''
