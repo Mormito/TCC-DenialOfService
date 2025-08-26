@@ -35,6 +35,7 @@ Choose wisely: ''').strip())
         target = input("Target (IP or url) >> ").strip()
         port = int(input("Target port >> "))
         num = int(input("Number of threads >> "))
+        numwor = int(input("Number of workens (default 200) >> "))
         udpflood(target, port, num)
 
         clear()
