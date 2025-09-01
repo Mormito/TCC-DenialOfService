@@ -29,7 +29,7 @@ Choose wisely: ''').strip())
         synflood(target, port, num, numwor)
 
         clear()
-        results(target, port, num, "SYN")
+        results(target, port, num, numwor, "SYN")
     elif(opcao == 2):
         clear()
         target = "10.0.2.5" #input("Target (IP or url) >> ").strip()
@@ -39,7 +39,7 @@ Choose wisely: ''').strip())
         udpflood(target, port, num, numwor)
 
         clear()
-        results(target, port, num, "UDP")
+        results(target, port, num, numwor, "UDP")
 
 control()
     
