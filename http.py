@@ -2,7 +2,9 @@ from scapy.all import IP, TCP, Raw, sr1, RandShort, RandIP
 
 #def send_http_packet(destiny, destiny_port):
 
-destiny = "hitt.com.br" ##
+destiny = "google.com" 
+## Como este código ainda não ataca, utilizei sites comuns para enviar requisições HTTP, apenas para testar se estava enviando a requisição.
+## Em nenhum momento causando danos, lentidões ou interrupções a sites.
 destiny_port = 80 ##
 
 HTTP_REQUEST = (
