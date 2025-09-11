@@ -17,6 +17,3 @@ def request_flood(destiny, destiny_port, num_of_packets, num_of_workers):
         
     print(f"Total de pacotes enviados: {num_of_packets}")
 
-
-
-request_flood("google.com", 80, 50, 10)
